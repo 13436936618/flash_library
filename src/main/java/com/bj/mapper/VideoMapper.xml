@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.bj.mapper.VideoMapper">
+    <insert id="save" parameterType="com.bj.pojo.Video">
+        insert  into video(id, sid, videoname, video, inputdate) values (#{id} ,#{sid} , #{videoname} , #{video} , #{inputdate})
+    </insert>
+
+    <select id="selectvideo" resultType="com.bj.pojo.Video">
+        select * from video
+        where sid = #{sid}
+    </select>
+
+    <delete id="deletevideo" parameterType="com.bj.pojo.Video">
+        delete from video
+        where id = #{id}
+    </delete>
+
+    <select id="list" resultType="com.bj.pojo.Video">
+        select * from video
+        where id = #{id}
+    </select>
+
+    <select id="selectall" resultType="com.bj.pojo.Video">
+        select * from video
+        where sid = #{sid}
+    </select>
+</mapper>

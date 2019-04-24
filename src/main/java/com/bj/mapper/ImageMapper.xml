@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.bj.mapper.ImageMapper">
+    <insert id="save" parameterType="com.bj.pojo.RealImage">
+        insert  into image(id, sid, imagename, image ,inputdate) values (#{id} ,#{sid} , #{imagename} , #{image} , #{inputdate})
+    </insert>
+
+    <select id="selectimage" resultType="com.bj.pojo.RealImage">
+        select * from image
+        where sid = #{sid}
+    </select>
+
+    <delete id="deleteimage" parameterType="com.bj.pojo.RealImage">
+        delete from image
+        where id = #{id}
+    </delete>
+
+    <select id="list" resultType="com.bj.pojo.RealImage">
+        select * from image
+        where id = #{id}
+    </select>
+
+    <select id="selectall" resultType="com.bj.pojo.RealImage">
+        select * from image
+        where sid = #{sid}
+    </select>
+</mapper>
